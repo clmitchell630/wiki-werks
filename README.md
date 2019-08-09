@@ -7,6 +7,6 @@ Group Project#1. Task currently unknown.
 *   git checkout -b 'remove-index'
 *   git push origin remove-index
     -   will push to the new branch
-    -   Once you have finished with your branch you can select "pull request"
+    -   Once you have finished with your branch you can select "new pull request". This is found in the branch overview.
 
 
