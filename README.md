@@ -1,5 +1,7 @@
 # improved-waffle
-Group Project#1. Task currently unknown.
+Group Project#1. 
+
+Wikipedia article aggregator that saves Wikipedia aritcles as a part of a lesson plan. And gives recommeneded reading from Amazon.com. 
 
 ## UI layout (optional)
 www.dribbble.com
