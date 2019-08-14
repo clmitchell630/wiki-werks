@@ -1,7 +1,8 @@
 #title {
     text-align: center;
-    font: x-large;
+    font-size: 75px;
     font-style: italic;
+    font-family: serif;
     padding-top: 5px;
     color: blue;
 }
@@ -17,6 +18,7 @@ body {
 
 #pic {
     text-align: center;
+    height: auto;
 }
 
 #start {
