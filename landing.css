@@ -1,0 +1,26 @@
+#title {
+    text-align: center;
+    font: x-large;
+    font-style: italic;
+    padding-top: 5px;
+    color: blue;
+}
+
+#main2 {
+    text-align: center;
+}
+
+body {
+    background: url("https://images.pexels.com/photos/164005/pexels-photo-164005.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-size: cover;
+}
+
+#pic {
+    text-align: center;
+}
+
+#start {
+    bottom: 0px;
+    text-align: center;
+    padding-top: 10px;
+}
