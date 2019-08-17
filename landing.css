@@ -1,0 +1,32 @@
+#title {
+    text-align: center;
+    font-size: 150px;
+    font-style: italic;
+    font-family: serif;
+    padding-top: 5px;
+    color: white;
+
+}
+
+#main2 {
+    text-align: center;
+}
+
+body {
+    background: url("https://www.pbs.org/newshour/app/uploads/2016/01/1540997910_4cf751c352_o.jpg");
+    background-size: cover;
+}
+
+#pic {
+    text-align: center;
+    height: auto;
+}
+
+#start {
+ 
+    text-align: center;
+    padding-top: 110px;
+   
+}
+
+.bttn {font-size: 70px;}
