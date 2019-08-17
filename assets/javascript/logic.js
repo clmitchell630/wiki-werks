@@ -20,9 +20,11 @@ $(document).ready(function () {
         
     }
     //When something with id wiki-form is clicked, perform the following function.
-    $("#find-wiki").on("click", function() {
+    $("#find-wiki").on("click", function(event) {
+        event.preventdefault();
+        console.log('foo')
         //Defines a variable that takes the field text on the form and stores it.
-        var WikiFormEntry = $(this).data("search");
+        var WikiFormEntry = $(this).data("wiki-input");
         //Defines a variable that stores the strucutre of a Wikipedia API request. 
         var WikiQueryURL = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + WikiFormEntry + "&format=jsonfm"
         //Runs an AJAX call on an object that has a key value pair of url with our defined variable above. and the method paired with 'GET'
@@ -40,13 +42,15 @@ $(document).ready(function () {
                     /*Variable that creates a new div with a class.
                     We can target this class later for formatting*/
                     var NewDiv = $("<div class='WikiReturn'>");
-                    //Calls our NewDiv function and adds in information.
+                    //Calls our NewDiv function. Adds title.
                     $(NewDiv).prepend("<h2>" + response.data[i].title + "</h2>")
+                    //Calls our NewDiv function. Adds a summary of the article.
                     $(NewDiv).prepend("<p>" + response.data[i].snippet + "</p>")
                     $("#wiki-view").prepend(NewDiv);
         })
     })
-
+})
+/*
         $("#sidebar").mCustomScrollbar({
              theme: "minimal"
         });
@@ -64,3 +68,4 @@ $(document).ready(function () {
         
     
     });
+*/
