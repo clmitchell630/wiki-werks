@@ -1,8 +1,13 @@
 anime({
     targets: '.bttn',
     translateY: [
-        { value: -50, duration: 1500 },
+        { value: -100, duration: 1500 },
+        {value: 0, duration: 800 }
     ],
+    rotate: {
+        value: '1turn',
+        easing: 'easeInOutSine'
+    }
   });
 
 
