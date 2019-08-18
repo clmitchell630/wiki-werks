@@ -5,7 +5,7 @@ anime({
         {value: 0, duration: 800 }
     ],
     rotate: {
-        value: '1turn',
+        value: '2turn',
         easing: 'easeInOutSine'
     }
   });
