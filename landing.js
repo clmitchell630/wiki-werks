@@ -11,5 +11,16 @@ anime({
     }
 });
 
+$('#start').click(function() {
+    window.location = "./request.html";
+ });
+
+
+
+
+
+ 
+   
+
 
 
