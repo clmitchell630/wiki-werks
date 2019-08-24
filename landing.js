@@ -3,7 +3,7 @@ anime({
     loop: true,
     translateY: [
         { value: -100, duration: 800 },
-        { value: 0, duration: 7000 },
+        { value: 0, duration: 4000 },
     ],
     rotate: {
         value: '2turn',
