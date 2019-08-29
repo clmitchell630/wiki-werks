@@ -8,6 +8,15 @@
 
 }
 
+p {
+    text-align: center;
+    font-style: italic;
+    font-family: serif;
+    color: white;
+    font-size: 45px;
+
+    }
+
 #main2 {
     text-align: center;
 }
@@ -25,8 +34,8 @@ body {
 #start {
  
     text-align: center;
-    padding-top: 110px;
-   
+           
 }
 
 .bttn {font-size: 70px;}
+
