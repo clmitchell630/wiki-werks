@@ -22,7 +22,7 @@ li img {
 }
 
 .card:hover {
-    opacity: .75;
+    opacity: .60;
 }
 
 .cardStyle {
@@ -42,7 +42,9 @@ li img {
 }
 
 .overflowStyle::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 .overflowStyle::-webkit-scrollbar-thumb {

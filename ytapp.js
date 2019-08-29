@@ -1,6 +1,8 @@
 $(function () {
 
     $("#find-wiki").on("click", function (e) {
+        
+        $("#ytList").empty();
 
         e.preventDefault();
 
