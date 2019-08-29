@@ -26,7 +26,7 @@ $(document).ready(function () {
         //Defines a variable that takes the field text on the form and stores it.
         var WikiFormEntry = $(this).data("wiki-input");
         //Defines a variable that stores the strucutre of a Wikipedia API request. 
-        var WikiQueryURL = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + WikiFormEntry + "&format=jsonfm"
+        var WikiQueryURL = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + WikiFormEntry + "&format=jsonfm&origin=*"
         //Runs an AJAX call on an object that has a key value pair of url with our defined variable above. and the method paired with 'GET'
         $.ajax({ url:WikiQueryURL, method: 'GET' })
             //Once that is done do the following.
