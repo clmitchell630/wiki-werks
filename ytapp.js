@@ -1,8 +1,7 @@
 $(function () {
 
-
-
     $("#find-wiki").on("click", function (e) {
+
         e.preventDefault();
 
         var queryTopic = $("#wiki-input").val().trim();
@@ -20,18 +19,21 @@ $(function () {
 
 
                 newItem.append(
-                    newDiv.addClass("card").attr("style", "background-color: #ffffff; width: 300px;").append(
+                    newDiv.addClass("card cardStyle").append(
                         $("<a>").attr("href", "https://www.youtube.com/watch?v=" + response.items[i].id.videoId).attr("target", "_blank").append(
-                            $("<img>").attr("src", response.items[i].snippet.thumbnails.default.url).addClass("card-img-top").attr("alt", response.items[i].snippet.title),
+                            $("<img>").attr("src", response.items[i].snippet.thumbnails.high.url).addClass("card-img-top").attr("alt", response.items[i].snippet.title),
                             $("<div>").addClass("card-body").append(
                             $("<h5>").addClass("card-text").html(response.items[i].snippet.title)
                             )
                         )
-                    )
+                    ),
+                    
                 );
 
                 $("#ytList").append(newItem);
+                $("#ytList").append($("<div>").attr("style", "height: 10px;"));
             }
         });
+
     });
 })

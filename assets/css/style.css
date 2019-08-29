@@ -5,3 +5,15 @@ li img {
 .card:hover{
     opacity: .75;
 }
+
+.cardStyle {
+    background-color: #ffffff; 
+    width: 300px; 
+    border: none;
+    text-align: center;
+
+}
+.cardStyle a:hover, .cardStyle a{
+    text-decoration: none;
+    color: black;
+}
