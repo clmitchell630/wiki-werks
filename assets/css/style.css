@@ -2,3 +2,6 @@
 li img {
     width: 100%;
 }
+.card:hover{
+    opacity: .75;
+}
