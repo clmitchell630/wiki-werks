@@ -1,22 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <script src="assets/javascript/logic.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/logic.js"></script>
+  <script type="text/javascript" src="ytapp.js"></script>
+  <title>Document</title>
 </head>
-    <title>Document</title>
-</head>
+
 <body>
-    
+
+  <header style="height: 50px;"></header>
+
+  <div class="container appBox">
+    <div class="row">
+      <!-- leftmost column -->
+      <section class="col-md-4">
+
+        <!-- form -->
+        <h3 class="headerStyle">Result Display</h3>
+
+        <form id="wiki-form">
+
+          <label for="wiki-input">Wikiwerks Topic Search</label>
+          <input type="text" class="form-control" id="wiki-input" placeholder="Enter Your Topic Search Here!">
+          <button class="btn btn-secondary btn-block" id="find-wiki" style="margin-top: 10px;">Search</button>
+
+        </form>
+
+        <div id="wiki-view"></div>
+
+        <!-- Sidebar Topics -->
+
+        <h3>Results Display</h3>
+        <ul style="list-style:none;">
+          <li>
+            <a href="#" class="wikilink">Link 1</a>
+          </li>
+          <li>
+            <a href="#" class="wikilink">Link 2</a>
+          </li>
+          <li>
+            <a href="#" class="wikilink">Link 3</a>
+          </li>
+          <li>
+            <a href="#" class="wikilink">Link 4</a>
+          </li>
+          <li>
+            <a href="#" class="wikilink">Link 5</a>
+          </li>
+          <li>
+            <a href="#" class="wikilink">Link 6</a>
+          <li>
+            <a href="#" class="wikilink">Link 7</a>
+          </li>
+
+        </ul>
+
+      </section>
+      <!-- Page Content -->
+      <section class="col-md-4">
+
+        <!-- <div class="row headerStyle"> -->
+        <h3 class="headerStyle">Recommeded Reading</h2>
+          <!-- </div> -->
+          <div class="container" style="margin: 0 auto;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <img src="assets/images/books.jpg" alt="books">
+              </li>
+              <li class="list-group-item">
+                <img src="assets/images/books.jpg" alt="books">
+              </li>
+              <li class="list-group-item">
+                <img src="assets/images/books.jpg" alt="books">
+              </li>
+            </ul>
+          </div>
+
+      </section>
+
+      <!-- youtube -->
+      <section class="col-md-4">
+        <div>
+          <h3 class="headerStyle">Related Videos</h3>
+          <div class="container overflow-auto overflowStyle" style="max-height: 500px;">
+            <ul class="list-unstyled" id="ytList">
+              <!-- content fills here -->
+            </ul>
+          </div>
+          <div style="height: 20px;"></div>
+        </div>
+      </section>
+
+      <!-- end of primary container -->
+    </div>
+  </div>
+
+  <footer style="height: 50px;"></footer>
+
 </body>
+
 </html>
