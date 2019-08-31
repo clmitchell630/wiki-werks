@@ -34,6 +34,7 @@ body {
 #start {
  
     text-align: center;
+    padding-top: 75px;
            
 }
 
@@ -41,6 +42,6 @@ body {
 
 #enter {
     color: white;
-    padding-top: 100px;
+    padding-top: -100px;
     text-align: center;
 }
