@@ -1,10 +1,10 @@
 $(function(){
     //When the button with id find-wiki is clicked it takes in the search request and performs a function.
     $("#find-wiki").on("click", function (search) {
-        //Clears our previous entries.
-        $("#WikiList").empty();
         //Prevents the default action and allows this to actually function.
         search.preventDefault();
+        //Clears our previous entries.
+        $("#WikiList").empty();
         //We take our search tearm from our wiki input form button.
         var Query = $("#wiki-input").val().trim();
         //Prebuilt Wikipedia URL for API requests. 
@@ -15,7 +15,7 @@ $(function(){
         "action=opensearch" + 
         //Return format as json, but guess what? It's not an object. It's an array. *shrug*. Took me forever to figure that out.
         "&format=json" + 
-        //You need this part here, or else you get a CORS request, and that's a whole other rabbit hole. The double edged sword of no API key required.
+        //You need this part here, or else you get a CORS error, and that's a whole other rabbit hole. The double edged sword of no API key required.
         "&origin=*" + 
         //Yo, what you looking you to search?
         "&search=" + 
