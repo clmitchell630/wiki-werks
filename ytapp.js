@@ -1,19 +1,67 @@
 $(function () {
+    // topic save array
+    var topics = [];
+    var isTopic;
 
     $("#find-wiki").on("click", function (e) {
-        
-        $("#ytList").empty();
+
+        var queryTopic = $("#wiki-input").val().trim();
 
         e.preventDefault();
 
-        var queryTopic = $("#wiki-input").val().trim();
-        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + queryTopic + "&maxResults=20&key=AIzaSyAPSES2I3JvLza-Ox2Rzta8_jnEJvgBj7U"
+        callYouTube(queryTopic);
+
+        if (queryTopic === "") {
+
+            //modal goes here
+            alert("modal will go here, but for now, PLEASE ENTER A TOPIC!");
+        }
+        else {
+            growTopics(e);
+        }
+
+    });
+
+    //------functions------
+    function addButton(name) {
+
+        var newBtn = $("<button>");
+        newBtn.attr("type", "button");
+        newBtn.addClass("btn btn-danger btn-block");
+        newBtn.text(name);
+        $("#wiki-view").append(newBtn);
+        $(newBtn).on("click", function () {
+            callYouTube(name);
+        });
+
+    }
+
+    function growTopics(e) {
+
+        e.preventDefault();
+
+        var newTopic = $("#wiki-input").val().trim();
+        topics.push(newTopic);
+
+        addButton(newTopic);
+
+        $("#wiki-input").val("");
+
+    }
+
+    function callYouTube(name) {
+
+        $("#ytList").empty();
+
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "&maxResults=20&key=AIzaSyAPSES2I3JvLza-Ox2Rzta8_jnEJvgBj7U"
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response);
+
+
 
             for (var i = 0; i < response.items.length; i++) {
                 var newItem = $("<li>").addClass("media");
@@ -47,14 +95,15 @@ $(function () {
 
                     );
                 }
-                else{
+                else {
                     console.error("Hey something went wrong!");
                 }
 
                 $("#ytList").append(newItem);
                 $("#ytList").append($("<div>").attr("style", "height: 10px;"));
             }
-        });
 
-    });
+
+        });
+    }
 })
