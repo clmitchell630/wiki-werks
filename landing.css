@@ -39,3 +39,8 @@ body {
 
 .bttn {font-size: 70px;}
 
+#enter {
+    color: white;
+    padding-top: 100px;
+    text-align: center;
+}
