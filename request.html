@@ -16,7 +16,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/logic.js"></script>
+  <script type="text/javascript" src="WikiAPI.js"></script>
   <script type="text/javascript" src="ytapp.js"></script>
   <title>Document</title>
 </head>
@@ -35,62 +35,32 @@
 
         <form id="wiki-form">
 
-          <label for="wiki-input">Wikiwerks Topic Search</label>
+          <label for="wiki-input">Topic Search</label>
           <input type="text" class="form-control" id="wiki-input" placeholder="Enter Your Topic Search Here!">
           <button class="btn btn-secondary btn-block" id="find-wiki" style="margin-top: 10px;">Search</button>
 
         </form>
+        <!-- spacer -->
+        <div style="height: 20px;"></div>
 
-        <div id="wiki-view"></div>
+        <!-- searched topics -->
+        <div class="container overflow-auto overflowStyle" style="max-height: 360px;">
+          <div id="wiki-view"></div>
+        </div>
 
-        <!-- Sidebar Topics -->
-
-        <h3>Results Display</h3>
-        <ul style="list-style:none;">
-          <li>
-            <a href="#" class="wikilink">Link 1</a>
-          </li>
-          <li>
-            <a href="#" class="wikilink">Link 2</a>
-          </li>
-          <li>
-            <a href="#" class="wikilink">Link 3</a>
-          </li>
-          <li>
-            <a href="#" class="wikilink">Link 4</a>
-          </li>
-          <li>
-            <a href="#" class="wikilink">Link 5</a>
-          </li>
-          <li>
-            <a href="#" class="wikilink">Link 6</a>
-          <li>
-            <a href="#" class="wikilink">Link 7</a>
-          </li>
-
-        </ul>
 
       </section>
       <!-- Page Content -->
       <section class="col-md-4">
-
-        <!-- <div class="row headerStyle"> -->
-        <h3 class="headerStyle">Recommeded Reading</h2>
-          <!-- </div> -->
-          <div class="container" style="margin: 0 auto;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <img src="assets/images/books.jpg" alt="books">
-              </li>
-              <li class="list-group-item">
-                <img src="assets/images/books.jpg" alt="books">
-              </li>
-              <li class="list-group-item">
-                <img src="assets/images/books.jpg" alt="books">
-              </li>
-            </ul>
-          </div>
-
+        <div>
+          <h3 class="headerStyle">Recommeded Reading</h2>
+            <div class="container overflow-auto overflowStyle" style="max-height: 500px;">
+              <ul class="list-unstyled" id="WikiList">
+                <!-- content fills here -->
+              </ul>
+              <div style="height: 20px;"></div>
+            </div>
+        </div>
       </section>
 
       <!-- youtube -->
