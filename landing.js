@@ -26,9 +26,16 @@ function letsAnime2() {
     });
 
 }
+//directing to main page (request.html)
+function winner() {
+    window.location.href = "./request.html";
+}
 
-//function for button spinning animation for UI success (optional)
-function letsAnime() {
+//adding delay before request.html page load to allow for spin
+setTimeout(winner, 8300);
+
+//function for button spinning animation seen on UI pass
+function Spin() {
 
     anime({
 
@@ -36,32 +43,21 @@ function letsAnime() {
         loop: false,
         translateY: [
             { value: -100, duration: 800 },
-            { value: 0, duration: 4000 },
+            { value: 0, duration: 4000, },
         ],
         rotate: {
             value: '2turn',
             easing: 'easeInOutSine',
-
         }
-
     });
-
 }
 
-
-//function to direct to main page
-function winner() {
-    window.location = "./request.html";
-}
 
 //on click, run validateForm() function
 $(document).ready(function () {
     $('#start').click(function () {
         validateForm();
     });
-
-    //creating function to spin anime.js and take user to request.html
-
 
     //checking UI validation/formatting
     function validateForm() {
@@ -77,13 +73,10 @@ $(document).ready(function () {
             letsAnime2();
             return false;
         }
-
-        //added letsGo() function here to direct user to main page if UI validates
+        //play spinning animation and direct user to main page
         else if (y.match(mailformat)) {
-            letsAnime();
-            return true;
-
-
+            return true,
+                Spin().done(winner());
         }
         else {
             $('#michell').text("Please submit a properly formatted email address");
@@ -96,6 +89,8 @@ $(document).ready(function () {
     }
 
 });
+
+
 
 
 
