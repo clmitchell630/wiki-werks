@@ -32,7 +32,7 @@ function winner() {
 }
 
 //adding delay before request.html page load to allow for spin
-setTimeout(winner, 8300);
+setTimeout(winner, 8500);
 
 //function for button spinning animation seen on UI pass
 function Spin() {
@@ -52,13 +52,19 @@ function Spin() {
     });
 }
 
+//adding sound clip for UI validation success
+function Playsound() {
+    var audio = new Audio('magic.mp3');
+    audio.loop = false;
+    audio.play();
+}
 
 //on click, run validateForm() function
 $(document).ready(function () {
     $('#start').click(function () {
         validateForm();
     });
-
+    
     //checking UI validation/formatting
     function validateForm() {
 
@@ -75,6 +81,7 @@ $(document).ready(function () {
         }
         //play spinning animation and direct user to main page
         else if (y.match(mailformat)) {
+            Playsound();
             return true,
                 Spin().done(winner());
         }
