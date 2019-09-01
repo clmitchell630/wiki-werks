@@ -33,12 +33,17 @@ body {
 
 #start {
  
-    text-align: center;
-    padding-top: 75px;
-           
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    bottom: 20%;
+    margin-left: -12%;
+              
 }
 
-.bttn {font-size: 70px;}
+.bttn {
+    font-size: 70px;
+  }
 
 #enter {
     color: white;
