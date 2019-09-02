@@ -33,14 +33,20 @@ body {
 
 #start {
  
-    text-align: center;
-           
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    bottom: 20%;
+    margin-left: -12%;
+              
 }
 
-.bttn {font-size: 70px;}
+.bttn {
+    font-size: 70px;
+  }
 
 #enter {
     color: white;
-    padding-top: 100px;
+    padding-top: -100px;
     text-align: center;
 }
