@@ -8,6 +8,15 @@
 
 }
 
+p {
+    text-align: center;
+    font-style: italic;
+    font-family: serif;
+    color: white;
+    font-size: 45px;
+
+    }
+
 #main2 {
     text-align: center;
 }
@@ -24,9 +33,20 @@ body {
 
 #start {
  
-    text-align: center;
-    padding-top: 110px;
-   
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    bottom: 20%;
+    margin-left: -12%;
+              
 }
 
-.bttn {font-size: 70px;}
+.bttn {
+    font-size: 70px;
+  }
+
+#enter {
+    color: white;
+    padding-top: -100px;
+    text-align: center;
+}

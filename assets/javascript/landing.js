@@ -1,39 +1,4 @@
 
-<<<<<<< HEAD
-function validateForm() {
-<<<<<<< HEAD
-    var x = document.forms["myForm"]["fname"].value;
-    var y = document.forms["myForm"]["userEmail"].value;
-
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    if (x == "" || y == "") {
-        $('#michell').text("All fields must be completed");
-        console.log("test")
-        return false;
-    }
-    else if (y.match(mailformat)) {
-        return true;
-
-    }
-    else {
-        $('#michell').text("Please submit a properly formactted email address");
-        console.log("test")
-        return false;
-
-    }
-
-}
-
-$('#start').click(function () {
-    validateForm();
-    if (
-=======
-  var x = document.forms["myForm"]["fname"].value;
-  var y = document.forms["myForm"]["userEmail"].value;
- 
-  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-=======
 //function for anime.js button shake upon failed UI validation
 function letsAnime2() {
     const xMax = 16;
@@ -59,7 +24,7 @@ function letsAnime2() {
             }
         ],
     });
->>>>>>> f8417e8960c2c26e34e0d2f9a11b20b18376a887
+
 
 }
 //directing to main page (request.html)
@@ -100,27 +65,30 @@ $(document).ready(function () {
     $('#start').click(function () {
         validateForm();
     });
-    
+
     //checking UI validation/formatting
     function validateForm() {
-
+        // This is the variable for the name field
         var x = document.forms["myForm"]["fname"].value;
+        // This is the variable for the email field
         var y = document.forms["myForm"]["userEmail"].value;
-
+        // this is the variable that estabishes the email format
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
+        // this establishes that the neither fields can be empty otherwise a text message is generated
         if (x == "" || y == "") {
             $('#michell').text("All fields must be completed");
             console.log("test");
             letsAnime2();
             return false;
         }
+        //This allows pass through to second page if everything is formatted/entered correctly
         //play spinning animation and direct user to main page
         else if (y.match(mailformat)) {
             Playsound();
             return true,
                 Spin().done(winner());
         }
+        // This enters a text message if the email is not formatted correctly
         else {
             $('#michell').text("Please submit a properly formatted email address");
             console.log("test")
@@ -135,16 +103,13 @@ $(document).ready(function () {
 
 
 
-<<<<<<< HEAD
-$('#start').click(function() {
->>>>>>> bcaf7c453366fadb5e9ae80e913a3613b4a2ccb4
-    window.location = "./request.html";
-    
-});
 
+// $('#start').click(function() {
 
-=======
->>>>>>> f8417e8960c2c26e34e0d2f9a11b20b18376a887
+//     window.location = "./request.html";
+
+// });
+
 
 
 
