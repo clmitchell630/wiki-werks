@@ -14,44 +14,33 @@
     <!--CSS file link-->
     <link rel="stylesheet" type="text/css" href="./landing.css">
 
-
 </head>
 
-
 <body>
-
     <div id="main">
 
         <div class="container">
             <div class="page-header">
                 <h1 id="title"><strong>Wiki-Werks</strong></h1>
-                <p>Click button to get started...</p>
+                <p>Enter your credentials to get started...</p>
+                <p id="michell">
+                </p>
+                <!-- this should go afer form name: action="assets/"  it will take us to wherever we want to go(next page) -->
+                <form id="enter" name="myForm" onsubmit="return validateForm()" method="post">
+                    Name: <input type="text" name="fname">
+                    Email: <input type="text" name="userEmail">
+                </form>
             </div>
         </div>
-
         <title>Wiki-Assist</title>
-
         <div id="start">
             <button type="button" class="btn btn-primary bttn btn-lg"><strong>Get Started</strong></button>
         </div>
-
     </div>
-
-    <p id="michell">
-    </p>
-    <!-- this should go afer form name: action="assets/"  it will take us to wherever we want to go(next page) -->
-    <form id = "enter" name="myForm" onsubmit="return validateForm()" method="post">
-        Name: <input type="text" name="fname">
-        Email: <input type="text" name="userEmail">
-        <input type="submit" value="Submit">
-    </form>
-
     <!-- anime.js link -->
     <script src="./anime.min.js"></script>
     <!-- JS file -->
     <script src="./landing.js"></script>
-
-
 </body>
 
 </html>
