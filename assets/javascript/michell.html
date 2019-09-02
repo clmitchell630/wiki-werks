@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- javascript -->
+  <!-- javascript -->
 
-<script>
-function validateForm() {
+  <script>
+    function validateForm() {
 
-  // This is the variable for the name field
-  var x = document.forms["myForm"]["fname"].value;
-   // This is the variable for the email field
-  var y = document.forms["myForm"]["userEmail"].value;
+      // This is the variable for the name field
+      var x = document.forms["myForm"]["fname"].value;
+      // This is the variable for the email field
+      var y = document.forms["myForm"]["userEmail"].value;
 
-  // this is the variable that estabishes the email format
- 
-  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-// this establishes that the neither fields can be empty otherwise a text message is generated
-  if (x == "" || y == "") {
-    $('#michell').text("All fields must be completed");
-    console.log ("test")
-    return false;
-}
-//This allows pass through to second page if everything is formatted/entered correctly
-else if (y.match(mailformat)){ 
-    return true;
+      // this is the variable that estabishes the email format
 
-} 
-  // THis enters a text message if the email is not formatted correctly
-else {
-    $('#michell').text("Please submit a properly formatted email address");
-    console.log ("test")
-    return false;
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      // this establishes that the neither fields can be empty otherwise a text message is generated
+      if (x == "" || y == "") {
+        $('#michell').text("All fields must be completed");
+        console.log("test")
+        return false;
+      }
+      //This allows pass through to second page if everything is formatted/entered correctly
+      else if (y.match(mailformat)) {
+        return true;
 
-} 
+      }
+      // THis enters a text message if the email is not formatted correctly
+      else {
+        $('#michell').text("Please submit a properly formatted email address");
+        console.log("test")
+        return false;
 
-}
-</script>
-<!-- End Javaddcript -->
+      }
+
+    }
+  </script>
+  <!-- End Javaddcript -->
 </head>
+
 <body>
 
   <!-- html for ui -->
-<p id="michell">
-</p>
- <!-- this should go afer form name: action="assets/"  it will take us to wherever we want to go(next page) -->
-<form name="myForm" 
-onsubmit="return validateForm()" method="post">
-  Name: <input type="text" name="fname">
-  Email: <input type="text" name="userEmail">
-  <input type="submit" value="Submit">
-</form>
+  <p id="michell">
+  </p>
+  <!-- this should go afer form name: action="assets/"  it will take us to wherever we want to go(next page) -->
+  <form name="myForm" onsubmit="return validateForm()" method="post">
+    Name: <input type="text" name="fname">
+    Email: <input type="text" name="userEmail">
+
+  </form>
 
 </body>
+
 </html>
