@@ -105,7 +105,6 @@ $(function () {
                 $("#ytList").append($("<div>").attr("style", "height: 10px;"));
             }
 
-
         });
     // end of callYouTube
     }
@@ -129,7 +128,7 @@ $(function () {
             //This, you're looking to search this. This is what was typed in to the request earlier. 
             name +
             //How many results do we want back? Let's list it at 15 and call it a day.
-            "&limit=15"
+            "&limit=20"
         //AJAX baby!
         $.ajax({
             //What is our URL? It's QueryURL. What's QueryURL. Everything in our previous thing above starting at line 11.
@@ -153,7 +152,8 @@ $(function () {
             [1][i]: The title of the article(s). The title of wherever we are in the for loop.
             [2][i]: The excerpt of the page(s). The excerpt of whever we are in the for loop. */
             for (var i = 0; i < response[1].length; i++) {
-                $("#WikiList").prepend("<div><div><a href=" + response[3][i] + "><h2>" + response[1][i] + "</h2>" + "<p>" + response[2][i] + "</p></a></div></div>");
+                $("#WikiList").append("<div class='card cardStyle'><div class='card-body'><a href=" + response[3][i] + "><h2 class='card-title'>" + response[1][i] + "</h2>" + "<p class='card-text'>" + response[2][i] + "</p></a></div></div>");
+                $("#WikiList").append($("<div>").attr("style", "height: 10px;"));
             }
         });
     // end of callWiki
