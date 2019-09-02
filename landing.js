@@ -11,16 +11,43 @@ anime({
     }
 });
 
-$('#start').click(function() {
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    var y = document.forms["myForm"]["userEmail"].value;
+
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (x == "" || y == "") {
+        $('#michell').text("All fields must be completed");
+        console.log("test")
+        return false;
+    }
+    else if (y.match(mailformat)) {
+        return true;
+
+    }
+    else {
+        $('#michell').text("Please submit a properly formactted email address");
+        console.log("test")
+        return false;
+
+    }
+
+}
+
+$('#start').click(function () {
+    validateForm();
+    if (
     window.location = "./request.html";
- });
+    
+});
 
 
 
 
 
- 
-   
+
+
 
 
 
