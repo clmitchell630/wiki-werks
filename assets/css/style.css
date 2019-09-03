@@ -3,7 +3,16 @@ body {
     color: whitesmoke;
     
 }
-
+.btnWrapper{
+    margin: 10px 0;
+}
+.primeBtn{
+    width: 80%;
+    margin-right: 5%
+}
+.secBtn{
+    width: 15%;
+}
 .headerStyle {
     padding: 25px 0px;
     text-align: center;

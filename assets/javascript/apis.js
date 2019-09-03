@@ -1,7 +1,16 @@
 $(function () {
+
     // topic save array
     var topics = [];
-     
+
+    if (localStorage.getItem("Topics") != null) {
+        topics = JSON.parse(localStorage.getItem("Topics"));
+        console.log(topics);
+        for (var k = 0; k < topics.length; k++) {
+            addButton(topics[k]);
+        }
+    }
+
 
     $("#find-wiki").on("click", function (e) {
 
@@ -15,11 +24,11 @@ $(function () {
         if (queryTopic === "") {
 
             //modal goes here
-            alert("modal will go here, but for now, PLEASE ENTER A TOPIC!");
-            
+            console.log("modal will go here, but for now, PLEASE ENTER A TOPIC!");
+
         }
         else {
-            growTopics(e);
+            addTopic(e);
         }
 
     });
@@ -28,27 +37,61 @@ $(function () {
     function addButton(name) {
 
         var newBtn = $("<button>");
+        var rmBtn = $("<button>");
+
         newBtn.attr("type", "button");
-        newBtn.addClass("btn btn-danger btn-block");
+        newBtn.addClass("btn btn-danger primeBtn");
         newBtn.text(name);
-        $("#wiki-view").append(newBtn);
+
+        rmBtn.attr("type", "button");
+        rmBtn.addClass("btn btn-dark secBtn");
+        rmBtn.text("X");
+
+        $("#wiki-view").append($("<div>").addClass("btnWrapper").append(newBtn, rmBtn));
         $(newBtn).on("click", function () {
             callYouTube(name);
             callWiki(name);
         });
 
+        $(rmBtn).on("click", removeTopic);
     }
 
-    function growTopics(e) {
+    function addTopic(e) {
 
         e.preventDefault();
 
         var newTopic = $("#wiki-input").val().trim();
         topics.push(newTopic);
 
+        pushLocalStorage();
+
         addButton(newTopic);
 
         $("#wiki-input").val("");
+
+    }
+    
+    function removeTopic() {
+
+        // console.log($(this).parent().children(".primeBtn").text());
+        var btnName = $(this).parent().children(".primeBtn").text();
+        var topicIndex = topics.indexOf(btnName);
+
+        if (topicIndex > -1) {
+
+            topics.splice(topicIndex, 1);
+            $(this).parent().empty();
+            pushLocalStorage();
+        }
+        else {
+            console.error("This is not the button name you're looking for!");
+        }
+
+    }
+
+    function pushLocalStorage() {
+
+        localStorage.setItem("Topics", JSON.stringify(topics));
 
     }
 
@@ -65,48 +108,42 @@ $(function () {
             console.log(response);
 
 
-            for (var i = 0; i < response.items.length; i++) {
+            for (var j = 0; j < response.items.length; j++) {
                 var newItem = $("<li>").addClass("media");
                 var newDiv = $("<div>");
-
-                if (response.items[i].id.kind === "youtube#video") {
-                    newItem.append(
-                        newDiv.addClass("card cardStyle").append(
-                            $("<a>").attr("href", "https://www.youtube.com/watch?v=" + response.items[i].id.videoId).attr("target", "_blank").append(
-                                $("<img>").attr("src", response.items[i].snippet.thumbnails.high.url).addClass("card-img-top").attr("alt", response.items[i].snippet.title),
-                                $("<div>").addClass("card-body").append(
-                                    $("<h5>").addClass("card-text").html(response.items[i].snippet.title)
-                                )
-                            )
-
-                        ),
-
-                    );
+                var link;
+                if (response.items[j].id.kind === "youtube#video") {
+                    link = "https://www.youtube.com/watch?v=" + response.items[j].id.videoId;
                 }
-                else if (response.items[i].id.kind === "youtube#channel") {
-                    newItem.append(
-                        newDiv.addClass("card cardStyle").append(
-                            $("<a>").attr("href", "https://www.youtube.com/channel/" + response.items[i].id.channelId).attr("target", "_blank").append(
-                                $("<img>").attr("src", response.items[i].snippet.thumbnails.high.url).addClass("card-img-top").attr("alt", response.items[i].snippet.title),
-                                $("<div>").addClass("card-body").append(
-                                    $("<h5>").addClass("card-text").html(response.items[i].snippet.title)
-                                )
-                            )
-
-                        ),
-
-                    );
+                else if (response.items[j].id.kind === "youtube#channel") {
+                    link = "https://www.youtube.com/channel/" + response.items[j].id.channelId;
+                }
+                else if (response.items[j].id.kind === "youtube#playlist") {
+                    link = "https://www.youtube.com/playlist?list=" + response.items[j].id.playlistId;
+                    console.log("There's a playlist!");
                 }
                 else {
-                    console.error("Hey something went wrong!");
+                    console.error("Hey something went wrong! " + "index " + j + " " + response.items[j].id.kind);
                 }
+                newItem.append(
+                    newDiv.addClass("card cardStyle").append(
+                        $("<a>").attr("href", link).attr("target", "_blank").append(
+                            $("<img>").attr("src", response.items[j].snippet.thumbnails.high.url).addClass("card-img-top").attr("alt", response.items[j].snippet.title),
+                            $("<div>").addClass("card-body").append(
+                                $("<h5>").addClass("card-text").html(response.items[j].snippet.title)
+                            )
+                        )
+
+                    ),
+
+                );
 
                 $("#ytList").append(newItem);
                 $("#ytList").append($("<div>").attr("style", "height: 10px;"));
             }
 
         });
-    // end of callYouTube
+        // end of callYouTube
     }
 
     function callWiki(name) {
@@ -156,6 +193,6 @@ $(function () {
                 $("#WikiList").append($("<div>").attr("style", "height: 10px;"));
             }
         });
-    // end of callWiki
+        // end of callWiki
     }
 })
