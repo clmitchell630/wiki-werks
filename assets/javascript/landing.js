@@ -45,7 +45,9 @@ function letsAnime2() {
     anime({
         targets: '.bttn',
         easing: 'easeInOutSine',
+        //How long we want the effect to last in milliseconds.
         duration: 550,
+        //Shake that thang (Controls movement animation.)
         translateX: [
             {
                 value: xMax * -1,
@@ -67,7 +69,7 @@ function letsAnime2() {
 
 }
 
-//directing to main page (request.html)
+//Directing to main page (request.html)
 function winner() {
     window.location = "./request.html"
 }
@@ -83,16 +85,16 @@ function validateForm() {
 
     var x = document.forms["myForm"]["fname"].value;
     var y = document.forms["myForm"]["userEmail"].value;
-
+    //What does an email address have? Typically this stuff. 
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
+    //Checks to make sure it ain't blank. 
     if (x == "" || y == "") {
         $('#michell').text("All fields must be completed");
         console.log("test");
         letsAnime2();
         return false;
     }
-    //directs user to main page upon successful UI pass
+    //Directs user to main page upon successful UI pass.
     else if (y.match(mailformat)) {
         Fireit();
         return true,
@@ -100,6 +102,7 @@ function validateForm() {
 
 
     }
+    //Directs user to the screen. Then to their internal monologue where they think: "How did I mess it up this time?""
     else {
         $('#michell').text("Please submit a properly formatted email address");
         console.log("test")
