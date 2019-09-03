@@ -1,3 +1,4 @@
+//Initializing function.
 $(function () {
 
     // array that holds the topics the user has input
@@ -36,6 +37,7 @@ $(function () {
             // console.log("PLEASE ENTER A TOPIC!");
 
         }
+        //Entered something in to actually search? Great, we'll make it run this lovingly crafted function for you.
         else {
             // resets placeholder text back to default
             $("#wiki-input").attr("placeholder", "Enter Your Topic Search Here!");
@@ -164,7 +166,11 @@ $(function () {
         $.ajax({
             url: queryURL,
             method: "GET"
+        //What now? Is this the end? Do I just take in data and send it off?
+        //No, you have a .then protocol aftewards to run a function. Take what they send back and do stuff to it.
+        //Oh, thank God. I didn't know what to do with myself afterwards. 
         }).then(function (response) {
+            //Log the response. 
             console.log(response);
 
             // the api returns a response within an array, this loop will look at each item in the array and build a card for it and put it on the DOM
@@ -223,8 +229,9 @@ $(function () {
         });
         // end of callYouTube
     }
-
+    //Wikipedia API. You know it, you love it. You've most certianly plagarized from it at some point in time. 
     function callWiki(name) {
+        //Clear our list of previous Wikipedia articles from previous searches. 
         $("#WikiList").empty();
         //We take our search tearm from our wiki input form button.
 
@@ -236,17 +243,19 @@ $(function () {
             "action=opensearch" +
             //Return format as json, but guess what? It's not an object. It's an array. *shrug*. Took me forever to figure that out.
             "&format=json" +
-            //You need this part here, or else you get a CORS request, and that's a whole other rabbit hole. The double edged sword of no API key required.
+            //You need this part here, or else you get a CORS error, and that's a whole other rabbit hole. The double edged sword of no API key required.
             "&origin=*" +
             //Yo, what you looking you to search?
             "&search=" +
             //This, you're looking to search this. This is what was typed in to the request earlier. 
             name +
-            //How many results do we want back? Let's list it at 15 and call it a day.
+            //How many results do we want back? Let's list it at 20 and call it a good enough.
+            //More than 20 leads to articles that while informative would be too niche to be relevent.
+            //*Glares at Electricity Sector in New Dehli from search for Electricity*.
             "&limit=20"
         //AJAX baby!
         $.ajax({
-            //What is our URL? It's QueryURL. What's QueryURL. Everything in our previous thing above starting at line 11.
+            //What is our URL? It's QueryURL. What's QueryURL. Everything in our previous thing above starting at line 144.
             url: QueryURL,
             //What is GET? Getting data from Wikipedia *finger guns*
             method: "GET"
@@ -267,7 +276,7 @@ $(function () {
             [1][i]: The title of the article(s). The title of wherever we are in the for loop.
             [2][i]: The excerpt of the page(s). The excerpt of whever we are in the for loop. */
             for (var i = 0; i < response[1].length; i++) {
-                $("#WikiList").append("<div class='card cardStyle'><div class='card-body'><a href=" + response[3][i] + "><h2 class='card-title'>" + response[1][i] + "</h2>" + "<p class='card-text'>" + response[2][i] + "</p></a></div></div>");
+                $("#WikiList").append("<div class='card cardStyle'><div class='card-body'><a href=" + response[3][i] + " target='_blank'><h2 class='card-title'>" + response[1][i] + "</h2>" + "<p class='card-text'>" + response[2][i] + "</p></a></div></div>");
                 $("#WikiList").append($("<div>").attr("style", "height: 10px;"));
             }
         });
