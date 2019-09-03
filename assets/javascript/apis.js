@@ -27,10 +27,7 @@ $(function () {
 
         // the search button is a submit button, stopping it from being weird
         e.preventDefault();
-
-
-
-
+        
         // validates search for empty, the placeholder text changes, if not it will run the call functions
         if (queryTopic === "") {
 
