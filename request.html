@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
 
@@ -7,17 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+  <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script type="text/javascript" src="assets/javascript/apis.js"></script>
-  <title>Document</title>
+
+  <title>Wiki-Werks</title>
+  
 </head>
 
 <body>
@@ -26,12 +28,12 @@
 
   <div class="container appBox">
     <div class="row">
-      <!-- Leftmost column -->
+      <!-- Topics section -->
       <section class="col-md-4">
 
         <!-- Search bar content. -->
         <h3 class="headerStyle">Topic Search</h3>
-        
+
         <form id="wiki-form">
 
           <label for="wiki-input">Enter a Topic Below</label>
@@ -52,13 +54,13 @@
       <!-- Wikipedia content goes here.  -->
       <section class="col-md-4">
         <div>
-          <h3 class="headerStyle">Recommended Reading</h2>
-            <div class="container overflow-auto overflowStyle" style="max-height: 500px;">
-              <ul class="list-unstyled" id="WikiList">
-                <!-- content fills here -->
-              </ul>
-              <div style="height: 20px;"></div>
-            </div>
+          <h3 class="headerStyle">Recommended Reading</h3>
+          <div class="container overflow-auto overflowStyle" style="max-height: 500px;">
+            <ul class="list-unstyled" id="WikiList">
+              <!-- content fills here -->
+            </ul>
+            <div style="height: 20px;"></div>
+          </div>
         </div>
       </section>
 
