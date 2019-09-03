@@ -6,29 +6,31 @@
     <meta charset="UTF-8">
     <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Firebase link-->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <!-- JQ file link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--bootstrap link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--CSS file link-->
-    <link rel="stylesheet" type="text/css" href="./landing.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/landing.css">
 
 </head>
-
+<!--Begin Body-->
 <body>
+    <!-- Main Div-->
     <div id="main">
-
+        <!--Bootstrap Container in which all content will sit-->
         <div class="container">
             <div class="page-header">
                 <h1 id="title"><strong>Wiki-Werks</strong></h1>
                 <p>Enter your credentials to get started...</p>
-                <p id="michell">
-                </p>
+                <p id="michell"></p>
                 <!-- this should go afer form name: action="assets/"  it will take us to wherever we want to go(next page) -->
                 <form id="enter" name="myForm" onsubmit="return validateForm()" method="post">
-                    Name: <input type="text" name="fname">
-                    Email: <input type="text" name="userEmail">
+                    Name: <input id = "nameIt" type="text" name="fname">
+                    Email: <input id = "emailIt" type="text" name="userEmail">
                 </form>
             </div>
         </div>
@@ -38,9 +40,9 @@
         </div>
     </div>
     <!-- anime.js link -->
-    <script src="./anime.min.js"></script>
+    <script src="assets/javascript/libraries/anime.min.js"></script>
     <!-- JS file -->
-    <script src="./landing.js"></script>
+    <script src="assets/javascript/landing.js"></script>
 </body>
 
 </html>
