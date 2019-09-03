@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Firebase link-->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <!-- JQ file link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--bootstrap link-->
@@ -27,8 +29,8 @@
                 <p id="michell"></p>
                 <!-- this should go afer form name: action="assets/"  it will take us to wherever we want to go(next page) -->
                 <form id="enter" name="myForm" onsubmit="return validateForm()" method="post">
-                    Name: <input type="text" name="fname">
-                    Email: <input type="text" name="userEmail">
+                    Name: <input id = "nameIt" type="text" name="fname">
+                    Email: <input id = "emailIt" type="text" name="userEmail">
                 </form>
             </div>
         </div>

@@ -1,5 +1,45 @@
+//Referencing firebase server to authenicate and initialize the application
+var firebaseConfig = {
+    apiKey: "AIzaSyBI99NPnup0E664hUhummmuSYKwX0p_UBA",
+    authDomain: "project1-ebc4f.firebaseapp.com",
+    databaseURL: "https://project1-ebc4f.firebaseio.com",
+    projectId: "project1-ebc4f",
+    storageBucket: "",
+    messagingSenderId: "677210244714",
+    appId: "1:677210244714:web:e074b7c2ed781fc8"
+};
 
-//function for anime.js button shake upon failed UI validation
+//Initializing firebase connection and passing through firebaseConfig for authentication
+firebase.initializeApp(firebaseConfig);
+
+var dataRef = firebase.database();
+
+//Setting the storage variables
+var Name = "";
+var Email = "";
+
+function Fireit() {
+    Name = $("#nameIt").val().trim();
+    Email = $("#emailIt").val().trim();
+    console.log(Email);
+    dataRef.ref().push({
+        Name: Name,
+        Email: Email,
+    });
+
+    //Resetting form values
+    $("#enter").val("");
+    return false;
+}
+//Creating listener for changes made to database
+dataRef.ref().on("child_added", function (childSnapshot) {
+
+    var Userinput = childSnapshot.val().Name;
+    var Userinput = childSnapshot.val().Email;
+    console.log(Userinput);
+});
+
+//Function for anime.js button shake upon failed UI validation
 function letsAnime2() {
     const xMax = 16;
     anime({
@@ -52,10 +92,13 @@ function validateForm() {
         letsAnime2();
         return false;
     }
-    //play spinning animation and direct user to main page
+    //directs user to main page upon successful UI pass
     else if (y.match(mailformat)) {
+        Fireit();
         return true,
             winner();
+
+
     }
     else {
         $('#michell').text("Please submit a properly formatted email address");
