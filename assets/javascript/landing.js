@@ -84,37 +84,21 @@ $('#start').click(function () {
 function validateForm() {
     // This is the variable for the name field
     var x = document.forms["myForm"]["fname"].value;
-    
+
     // This is the variable for the email field
     var y = document.forms["myForm"]["userEmail"].value;
-<<<<<<< HEAD
-
-    // this is the variable that estabishes the email format
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    // this establishes that the neither fields can be empty otherwise a text message is generated
-=======
     //What does an email address have? Typically this stuff. 
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     //Checks to make sure it ain't blank. 
->>>>>>> 813d991d2a2f71e66ec6dbb4cd208c1dd4c93e75
     if (x == "" || y == "") {
         $('#michell').text("All fields must be completed");
         console.log("test");
         letsAnime2();
         return false;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    //This allows pass through to second page if everything is formatted/entered correctly
 
-    //play spinning animation and direct user to main page
-=======
-    //directs user to main page upon successful UI pass
->>>>>>> 89973425f14cd42b8688031eac4f75fc1834b916
-=======
+    //This allows pass through to second page if everything is formatted/entered correctly
     //Directs user to main page upon successful UI pass.
->>>>>>> 813d991d2a2f71e66ec6dbb4cd208c1dd4c93e75
     else if (y.match(mailformat)) {
         Fireit();
         return true,
@@ -122,12 +106,7 @@ function validateForm() {
 
 
     }
-<<<<<<< HEAD
-    // This enters a text message if the email is not formatted correctly
-
-=======
     //Directs user to the screen. Then to their internal monologue where they think: "How did I mess it up this time?""
->>>>>>> 813d991d2a2f71e66ec6dbb4cd208c1dd4c93e75
     else {
         $('#michell').text("Please submit a properly formatted email address");
         console.log("test")
