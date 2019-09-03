@@ -116,7 +116,9 @@ $(function () {
     }
 
     // button adding function - will add a button that will store a searched topic and recall it when clicked. also makes a button to remove your search topic.
-    // 'name' is a variable that is passed through this function. It is HUGELY important as this is how we are able to 
+    // 'name' is a variable that is passed through this function. It is HUGELY important for two reasons
+    // one: this is how we are able to add the topic to the button as text
+    // two: this is our method for searching the APIs
     function addButton(name) {
 
         // topic button
