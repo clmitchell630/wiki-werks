@@ -3,6 +3,8 @@ $(function () {
 
     // array that holds the topics the user has input
     var topics = [];
+    // array of suggested topics for our user to search
+    var sampleTopics = ["Cancer", "Electricity", "Human Memory", "Planets", "Robots", "Human Evolution", "Conservation", "Newtons Laws", "Gravity", "Binomial Nomenclature"];
 
     // generate buttons from items saved in local storage
     if (localStorage.getItem("Topics") != null) {
@@ -39,8 +41,11 @@ $(function () {
         }
         //Entered something in to actually search? Great, we'll make it run this lovingly crafted function for you.
         else {
+
+            // stores a random topic from the suggested topics in our sampleTopics array
+            var placeHolderTopic = sampleTopics[Math.floor(Math.random() * sampleTopics.length)]
             // resets placeholder text back to default
-            $("#wiki-input").attr("placeholder", "Enter Your Topic Search Here!");
+            $("#wiki-input").attr("placeholder", placeHolderTopic);
             // calling the two functions below for the user's current input
             callYouTube(queryTopic);
             callWiki(queryTopic);
