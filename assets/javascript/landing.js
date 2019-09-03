@@ -82,8 +82,10 @@ $('#start').click(function () {
 
 //checking UI validation/formatting
 function validateForm() {
-
+    // This is the variable for the name field
     var x = document.forms["myForm"]["fname"].value;
+
+    // This is the variable for the email field
     var y = document.forms["myForm"]["userEmail"].value;
     //What does an email address have? Typically this stuff. 
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -94,6 +96,8 @@ function validateForm() {
         letsAnime2();
         return false;
     }
+
+    //This allows pass through to second page if everything is formatted/entered correctly
     //Directs user to main page upon successful UI pass.
     else if (y.match(mailformat)) {
         Fireit();
