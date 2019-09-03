@@ -167,7 +167,7 @@ $(function () {
         $("#ytList").empty();
 
         // the url we use to search youtube api using the name variable as the query method parameter
-        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "+educational&maxResults=20&key=AIzaSyAPSES2I3JvLza-Ox2Rzta8_jnEJvgBj7U"
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "+educational&maxResults=20&key=AIzaSyAPSES2I3JvLza-Ox2Rzta8_jnEJvgBj7U";
 
         // ajax method that gets information from the youtube api
         $.ajax({
@@ -289,4 +289,4 @@ $(function () {
         });
         // end of callWiki
     }
-})
+});
