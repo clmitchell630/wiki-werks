@@ -2,7 +2,7 @@
 $(function () {
     require('dotenv').config();
 
-    var ytKey = process.env.YT_KEY
+    var ytKey = process.env.YT_KEY;
     // array that holds the topics the user has input
     var topics = [];
     // array of suggested topics for our user to search
