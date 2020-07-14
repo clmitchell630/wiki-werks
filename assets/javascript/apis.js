@@ -1,7 +1,7 @@
 //Initializing function.
+const dotenv = require('dotenv');
 $(function () {
-    require('dotenv').config();
-
+    dotenv.config();
     var ytKey = process.env.YT_KEY;
     // array that holds the topics the user has input
     var topics = [];
