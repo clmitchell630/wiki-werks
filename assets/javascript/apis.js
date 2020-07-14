@@ -1,8 +1,5 @@
 //Initializing function.
-const dotenv = require('dotenv');
 $(function () {
-    dotenv.config();
-    var ytKey = process.env.YT_KEY;
     // array that holds the topics the user has input
     var topics = [];
     // array of suggested topics for our user to search
@@ -169,7 +166,7 @@ $(function () {
         $("#ytList").empty();
 
         // the url we use to search youtube api using the name variable as the query method parameter
-        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "+educational&maxResults=20&key=" + ytKey;
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "+educational&maxResults=20&key=AIzaSyDTbvo0bWs5U3RwaKNWJMApWbKmjmElo9c";
 
         // ajax method that gets information from the youtube api
         $.ajax({
