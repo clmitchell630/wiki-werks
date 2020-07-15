@@ -166,7 +166,7 @@ $(function () {
         $("#ytList").empty();
 
         // the url we use to search youtube api using the name variable as the query method parameter
-        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "+educational&maxResults=20&key=AIzaSyDWErVfbZ3QRCRPGGMRXn9Te-j9TgWUGJY";
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + name + "+educational&maxResults=20&key=AIzaSyBQvvezTUhUfbNgZl4Xj5wJ7w1AImdnPKw";
 
         // ajax method that gets information from the youtube api
         $.ajax({
